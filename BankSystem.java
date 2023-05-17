@@ -6,6 +6,7 @@ public class BankSystem {
         bank = new Bank();
         currentUser = null;
         admin1bs();
+
     }
     private void admin1bs() {
         Admin admin = new Admin("admin", "password");
@@ -13,7 +14,7 @@ public class BankSystem {
     }
     public void start() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to Bank FAIED ElMasry ELAfriqi ELMtrshem ELDawly");
+        System.out.println("Welcome to " + Bank.getBankName() + "!");
         while (true) {
             System.out.println("---------------------------");
             System.out.println("1. Login");

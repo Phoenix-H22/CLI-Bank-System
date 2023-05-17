@@ -5,27 +5,37 @@ import java.util.List;
 public class Bank {
     private List<User> users;
     private List<Account> accounts;
+    private static String bankName = "Bank FAIED ElMasry ELAfriqi ELMtrshem ELDawly";
 
     public Bank() {
         users = new ArrayList<>();
         accounts = new ArrayList<>();
     }
 
-    public void addUser(User user) {
+    public boolean addUser(User user) {
         users.add(user);
-        System.out.println("User added successfully.");
+//        System.out.println("User added successfully.");
+        return true;
+    }
 
+    public static String getBankName() {
+        return bankName;
     }
 
     public boolean removeUser(String username) {
-        for (User user : users) {
-            if (user.getUsername().equals(username)) {
-                users.remove(user);
-                return true;
+        try {
+            for (User user : users) {
+                if (user.getUsername().equals(username)) {
+                    users.remove(user);
+                    return true;
+                }
             }
+        } catch (Exception e) {
+            return false;
         }
         return false;
     }
+
 
     public User login(String username, String password) {
         for (User user : users) {

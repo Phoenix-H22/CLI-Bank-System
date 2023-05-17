@@ -16,7 +16,11 @@ class Admin extends User {
         String newUserPassword = scanner.nextLine();
 
         User newUser = new User(newUserUsername, newUserPassword);
-        bank.addUser(newUser);
+        if (bank.addUser(newUser)){
+            System.out.println("User added successfully.");
+        } else {
+            System.out.println("User already exists.");
+        }
     }
 
     public void removeUser(Bank bank) {
